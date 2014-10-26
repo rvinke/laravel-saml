@@ -34,7 +34,9 @@ class Account {
 
     public function samlLogin()
     {
-        Saml::requireAuth();
+        Saml::requireAuth(
+            array('ReturnTo' => URL::to('/login'))
+        ));
     }
 
     public function laravelLogin($id)
